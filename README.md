@@ -1,1 +1,1 @@
-# nodejs_8_the_right_way
+# Node.js 8 the Right Way: Practical, Server-Side JavaScript That Scales
