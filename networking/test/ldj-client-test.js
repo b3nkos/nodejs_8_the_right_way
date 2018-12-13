@@ -15,10 +15,10 @@ describe('LDJClient', () => {
 
   it('should emit a message event from a single data event', done => {
     client.on('message', message => {
-      assert.deepEqual(message, {foo: 'bar'})
+      assert.deepEqual(message, {'foo': 'bar'})
       done()
     })
 
-    stream.emmit('data', '{"foo": "bar"}\n')
+    stream.emit('data', '{"foo": "bar"}\n')
   })
 })
