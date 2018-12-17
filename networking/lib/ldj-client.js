@@ -4,6 +4,9 @@ const EventEmitter = require('events').EventEmitter
 
 class LDJClient extends EventEmitter {
   constructor(stream) {
+    if(!stream) {
+      throw new Error("can't be a null value")
+    }
     super()
 
     let buffer = ''
