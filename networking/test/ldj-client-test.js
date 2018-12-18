@@ -51,4 +51,21 @@ describe('LDJClient', () => {
       done() 
     }
   })
+
+  it('should emit a data event that is not JSON', done => {
+    client.on('message', message => {
+      done()
+    })
+    stream.emit('data', 'hello')
+  })
+
+  it('should emit a data event that send JSON but no newline', done => {
+    client.on('message', message => {
+      assert.deepEqual(message, {foo: 'bar'})
+      done()
+    })
+
+    stream.emit('data', '{"foo": "bar"}')
+    stream.emit('close')
+  })
 })

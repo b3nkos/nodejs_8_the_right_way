@@ -22,6 +22,10 @@ class LDJClient extends EventEmitter {
         boundary = buffer.indexOf('\n')
       }
     })
+
+    stream.on('close', () => {
+      this.emit('message', JSON.parse(buffer))
+    })
   }
 
   static connect(stream) {
