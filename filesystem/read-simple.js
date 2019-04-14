@@ -1,9 +1,9 @@
 'use strict';
-const fs = require('fs')
-fs.readFile('test.txt', (err, data) => {
+const fs = require('fs');
+fs.readFile('target.txt', (err, data) => {
   if(err) {
-    throw err
+    throw err;
   }
 
-  console.log(data)
-})
+  console.log(data);
+});

@@ -1,8 +1,8 @@
-'use strict'
-const fs = require('fs')
-fs.writeFile('test.txt', 'hello world!', (err) => {
+'use strict';
+const fs = require('fs');
+fs.writeFile('target.txt', 'hello world!', (err) => {
   if(err) {
-    throw err
+    throw err;
   }
-  console.log('File saved!')
+  console.log('File saved!');
 })
